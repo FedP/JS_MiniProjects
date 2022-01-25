@@ -15,3 +15,26 @@ function solution(A) {
     }
     }
 }
+
+//-----------Another Solution----------------//
+
+function countElement(element, A) {
+    let count = 0;
+    for(let value of A) {
+        if (element === value) {
+            count += 1
+        }
+    }
+    return count;
+}
+
+
+
+function solution(A) {
+    for (let element of A) {
+        if (countElement(element, A) %2 ===1) {
+            return element;
+        }
+    }
+    return -1;
+}
