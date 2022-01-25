@@ -38,3 +38,34 @@ function solution(A) {
     }
     return -1;
 }
+
+
+//-----------Another Solution----------------//
+
+
+function solution(A) {
+let sol = [];
+while(A.length > 0) {
+    //console.log("A is "+A);
+    //console.log("Sol is "+sol);
+
+    for( element of sol) {
+        if (element === A[0]){
+            A = A.slice(1, A.length);
+            sol = sol.slice(1, sol.length);
+            //console.log("Slice");
+        }
+    }
+    if(A[0] === A[1]) {
+        A = A.slice(2, A.length);
+        //console.log("Couple");
+    }
+    else {
+        sol.push(A[0]);
+        A = A.slice(1, A.length);
+        //console.log("Push");
+    }
+
+}
+return sol[0];
+}
