@@ -69,3 +69,58 @@ while(A.length > 0) {
 }
 return sol[0];
 }
+
+//-----------Another Solution----------------//
+
+function solution(A) {
+    A.sort((a,b) => a-b);
+    for (let i = 0; i < A.length; i += 2){
+        if (A[i] !== A[i+1]) {
+            return A[i];
+        }
+    }
+    return -1;
+
+}
+
+//-----------Another Solution----------------//
+
+function solution(A) {
+
+    const map = {};
+    for (let element of A){
+        console.log(map);
+        if(map[element]){
+            delete map[element];
+        } else{
+            map[element] = true;
+        }
+    }
+
+    for(let key in map){
+        return +key;
+    }
+}
+
+//-----------Another Solution----------------//
+
+function solution(A) {
+
+    const map = {};
+    for (let element of A){
+        console.log(map);
+        if(map[element]){
+            delete map[element];
+        } else{
+            map[element] = true;
+        }
+    }
+
+    return +Object.keys(map)[0]
+}
+
+//-----------Another Solution----------------//
+
+function solution(A) {
+    return A.reduce((acc, x) => acc ^ x, 0);
+}
